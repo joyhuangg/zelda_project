@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calories: 1
+  name: MyString
+  hearts: 1.5
+  cooked_effect: MyString
+
+two:
+  calories: 1
+  name: MyString
+  hearts: 1.5
+  cooked_effect: MyString
