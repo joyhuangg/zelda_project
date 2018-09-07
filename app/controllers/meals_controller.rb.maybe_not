@@ -1,0 +1,48 @@
+class MealsController < ApplicationController
+  def index
+    @meals = Meal.all
+  end
+
+  def new
+    @meal = Meal.new
+  end
+
+  def create
+    @meal = Meal.new(meal_params)
+    if @meal.save
+      redirect_to @meal
+    else
+      render :new
+    end
+  end
+
+  def show
+    find_meal
+  end
+
+  def edit
+    find_meal
+  end
+
+  def update
+    find_meal
+    if @meal.update(meal_params)
+      redirect_to @meal
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+  end
+
+  private
+
+  def find_meal
+    @meal = Meal.find(params[:id])
+  end
+
+  def meal_params
+    params.require(:meal).permit(:rating, :user_id, :recipe_id)
+  end
+end

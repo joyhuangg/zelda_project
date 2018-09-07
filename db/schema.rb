@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_09_06_030353) do
   create_table "ingredient_users", force: :cascade do |t|
     t.integer "ingredient_id"
     t.integer "user_id"
-    t.integer "quantity"
+    t.integer "quantity", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_09_06_030353) do
     t.string "name"
     t.float "hearts"
     t.string "cooked_effect"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

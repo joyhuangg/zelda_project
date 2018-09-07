@@ -1,0 +1,17 @@
+<% if @recipe.errors.any? %>
+  <% @recipe.errors.full_messages.each do |msg| %>
+    <%= msg %><br>
+  <% end %>
+<% end %>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :duration %><br>
+  <%= f.number_field :duration %><br>
+  <%= f.label :calories %><br>
+  <%= f.number_field :calories %><br>
+  <%= f.label :image_url %><br>
+  <%= f.text_field :image_url %><br>
+  <%= f.submit %>
+<% end %>
